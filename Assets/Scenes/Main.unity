@@ -263,6 +263,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 240374432}
+  - component: {fileID: 240374433}
   - component: {fileID: 240374431}
   - component: {fileID: 240374430}
   - component: {fileID: 240374429}
@@ -318,7 +319,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ce929fc4aaed5f542a329acff0073731, type: 2}
+  - {fileID: 2100000, guid: 94202c8462a49814495d533565dba248, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -363,6 +364,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 843887225}
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
+--- !u!114 &240374433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240374428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2293c432925160d4a87f64d3ddf096b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Backdrops:
+  - {fileID: 2100000, guid: 7fbffd6c46f5ec34b9fae83810e7882a, type: 2}
+  - {fileID: 2100000, guid: ce929fc4aaed5f542a329acff0073731, type: 2}
+  - {fileID: 2100000, guid: 94202c8462a49814495d533565dba248, type: 2}
+  Curtain: {fileID: 1059831474}
+  Director: {fileID: 1425619620}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,7 +831,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 240374432}
-  - {fileID: 1059831473}
   - {fileID: 759726283}
   - {fileID: 111336746}
   - {fileID: 330585546}
@@ -876,6 +894,7 @@ GameObject:
   - component: {fileID: 1059831472}
   - component: {fileID: 1059831471}
   - component: {fileID: 1059831470}
+  - component: {fileID: 1059831474}
   - component: {fileID: 1059831469}
   m_Layer: 0
   m_Name: Curtains
@@ -914,7 +933,7 @@ VideoPlayer:
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
   m_WaitForFirstFrame: 1
@@ -1008,8 +1027,22 @@ Transform:
   m_LocalScale: {x: 4, y: 0.001, z: 2.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 843887225}
+  m_Father: {fileID: 1165661827}
   m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
+--- !u!114 &1059831474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059831468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16601f38aa3c11c45ad9a248f09191ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OpenCurtains: {fileID: 32900000, guid: 3b6fdb9c88ebcfd43a733cf794c4ea2c, type: 3}
+  CloseCurtains: {fileID: 32900000, guid: 65f85d715613ed34bb278d987b5fbdd9, type: 3}
 --- !u!1 &1140978546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,6 +1104,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1425619619}
+  - {fileID: 1059831473}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1425619618
@@ -1083,6 +1117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1425619619}
   - component: {fileID: 1425619620}
+  - component: {fileID: 1425619621}
   m_Layer: 0
   m_Name: Timeline
   m_TagString: Untagged
@@ -1119,9 +1154,86 @@ PlayableDirector:
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings: []
+  m_SceneBindings:
+  - key: {fileID: -6500758215452863939, guid: b26d3727ba86cb7419d8240b988c9735, type: 2}
+    value: {fileID: 1425619621}
   m_ExposedReferences:
     m_References: []
+--- !u!114 &1425619621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425619618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 0952aa015eecf6a4a94a64e21bbb3cec, type: 2}
+    - {fileID: 11400000, guid: e700e1d10007f734397049bd8bbadf99, type: 2}
+    - {fileID: 11400000, guid: 7190c8bbb59073e4994bcee42d31fd58, type: 2}
+    - {fileID: 11400000, guid: 00fbf4034c7f192499ec686b52a781cf, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1059831474}
+          m_TargetAssemblyTypeName: CurtainManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: open
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1059831474}
+          m_TargetAssemblyTypeName: CurtainManager, Assembly-CSharp
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: close
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 240374433}
+          m_TargetAssemblyTypeName: BackdropManager, Assembly-CSharp
+          m_MethodName: TransitionBackdrop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 240374433}
+          m_TargetAssemblyTypeName: BackdropManager, Assembly-CSharp
+          m_MethodName: TransitionBackdrop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2065241440
 GameObject:
   m_ObjectHideFlags: 0
